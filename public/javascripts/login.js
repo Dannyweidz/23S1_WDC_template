@@ -13,7 +13,7 @@ function login(){
 
     XHTTP.onload = function() {
         if (XHTTP.status === 200){
-            window.location.href = '/homepage.html';
+            window.location.href = '/homepage';
         } else if (XHTTP.status === 401){
             var passfield = document.getElementById('password');
             var division = document.createElement('DIV');

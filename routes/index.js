@@ -27,4 +27,12 @@ router.get("/register", function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/register.html'));
 });
 
+
+/* INSERT SESSION CHECKING MIDDLEWARE*/
+
+
+router.get("/homepage", function(req, res, next) {
+  res.sendFile(path.join(__dirname, '../public/homepage.html'));
+});
+
 module.exports = router;

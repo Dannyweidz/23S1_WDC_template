@@ -32,3 +32,18 @@ function login(){
     }
 
 };
+
+function login_with_google(response){
+
+    let XHTTP = new XMLHttpRequest();
+
+    XHTTP.onreadystatechange = function(){
+        if (XHTTP.status === 200 && XHTTP.readyState === 4){
+            window.location.href = '/homepage';
+        }
+    }
+
+    XHTTP.open('POST', '/login');
+    XHTTP.setRequestHeader('Content-Type', 'application/json');
+    XHTTP.send(JSON.stringify(response));
+}

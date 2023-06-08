@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
+const CLIENT_ID = '79497311944-21t54bos8cnb2cf09gp5f9qlbv90sgcv.apps.googleusercontent.com';
+
+const {OAuth2Client} = require('google-auth-library');
+const client = new OAuth2Client(CLIENT_ID);
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,14 +17,30 @@ let users = {
   duckduck: {password: 'shoob'}
 };
 
-router.post("/login", function(req, res, next) {
+router.post("/login", async function(req, res, next) {
 
-  if (req.body.username in users && req.body.password === users[req.body.username].password){
+  if ('client_id' in req.body){
 
-    req.session.username = req.body.username;
-    res.sendStatus(200);
+      const ticket = await client.verifyIdToken({
+        idToken: req.body.credential,
+        audience: CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
+        // Or, if multiple clients access the backend:
+        //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+      });
+      const payload = ticket.getPayload();
+      req.session.username = payload['email'];
+      // If request specified a G Suite domain:
+      // const domain = payload['hd'];
+      res.sendStatus(200);
   } else {
-    res.sendStatus(401);
+
+    if (req.body.username in users && req.body.password === users[req.body.username].password){
+
+      req.session.username = req.body.username;
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(401);
+    }
   }
 });
 

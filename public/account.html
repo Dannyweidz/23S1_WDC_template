@@ -4,10 +4,30 @@
 
     <head>
         <title>USERNAME (PLACEHOLDER)</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
 
     <body class="main">
+
+        <div class="heading">
+            <button type="button" class="icon-button">
+              <span class="material-icons" onclick="logout()">logout</span>
+            </button>
+            <h1 style="padding-right:25px">C l u b C o n n e c t</h1>
+          </div>
+
+          <div class="navbar">
+            <a href="/homepage">Home</a>
+            <a href="clubs.html">Clubs</a>
+            <a href="events.html">Events</a>
+            <a href="discussion.html">Disscussions</a>
+            <a href="account.html">My Profile</a>
+          </div>
+
         <div class="main-div">
             <div class="user-content">
                 <div class="cover-pic-div">
@@ -86,6 +106,7 @@
             </div>
 
         </div>
+        <script src="/javascripts/homepage.js"></script>
     </body>
 
 </html>

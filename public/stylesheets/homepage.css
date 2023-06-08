@@ -213,7 +213,6 @@
     margin-bottom: 200px;
     width: 90%;
     height: 60vh;
-    opacity: 0.3;
     position: relative;
     background-image: url('https://images.squarespace-cdn.com/content/v1/626a30cb956bc476f16b2ba2/1683946684707-SCE6L33KWAD74EZ0Z8OR/AUES+BBQ+2+2023+-+157.jpeg?format=1500w');
     background-size: cover;
@@ -270,12 +269,12 @@
 
       .event {
         display: none;
-        position: fixed;
+        position: relative;
       }
 
       .event.active {
         display: block;
-        position: fixed;
+        position: relative;
       }
 
       .upcoming-events {
@@ -323,3 +322,13 @@
         color: #333;
       }
 
+.this-is-dumb {
+  width:20%;
+  height:20%;
+  padding-left:25px;
+  background-color:#D6F0EF;
+}
+
+.navbar a:hover {
+  color:grey;
+}

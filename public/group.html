@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>CLUB NAME (PLACEHOLDER)</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+
+    <body class="main">
+        <div class="main-div">
+            <div class="user-content">
+                <div class="cover-pic-div">
+                    <img class="cover-pic" src="/images/default-cover.png" alt="Cover Picture">
+                    <div class="overlay"></div>
+                </div>
+                <h1 class="group">CLUB NAME</h1>
+                <hr color="#298C8A">
+            </div>
+            <div class="content-container">
+                <div class="groups-col">
+                    <ul class="user-profile-groups">
+                        <li><button id="event-button" type="button" onclick="showEvents()">EVENTS</button></li>
+                        <li><button id="members-button" type="button" onclick="showMembers()">MEMBERS</button></li>
+                    </ul>
+                </div>
+                <div id="events-selected" class="user-info-col">
+                    <div class="events">
+                        <div class="event-pic-div">
+                            <img class="event-pic" src="/images/default-event.jpeg" alt="event">
+                        </div>
+                        <div class="event-content">
+                            <h3>EVENT NAME</h3>
+                            <h4>TIME START - TIME END</h4>
+                            <h4>LOCATION</h4>
+                            <button type="button">Going!</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="members-selected" class="user-info-col" hidden>
+                    <div class="members">
+                        <div class="club-member">
+                            <h5>NAME</h5>
+                            <h5>ROLE</h5>
+                        </div>
+                        <hr color="#298C8A" style="margin-left:5px">
+                        <div class="club-member">
+                            <h5>FIRST NAME LAST NAME</h5>
+                            <h5>ADMIN</h5>
+                        </div>
+                        <div class="club-member">
+                            <h5>FIRST NAME LAST NAME</h5>
+                            <h5>MEMBER</h5>
+                        </div>
+                        <div class="club-member">
+                            <h5>FIRST NAME LAST NAME</h5>
+                            <h5>MEMBER</h5>
+                        </div>
+                        <div class="club-member">
+                            <h5>FIRST NAME LAST NAME</h5>
+                            <h5>MEMBER</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/javascripts/group.js"></script>
+    </body>
+
+</html>

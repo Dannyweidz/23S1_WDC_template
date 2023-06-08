@@ -2,11 +2,11 @@
 
 
 
-      
+
 /* --------------------------------------------------------------------------------------------------------------- */
 /* START OF CLUB PAGE */
 /* START OF CLUB PAGE */
-/* START OF CLUB PAGE */  
+/* START OF CLUB PAGE */
 
 .Website_main_header {
     text-align: center;
@@ -14,7 +14,7 @@
     background-color: #333;
     color: #fff;
   }
-  
+
   /* Style the main container */
   .main_div {
     display: flex;
@@ -24,7 +24,7 @@
     max-width: 800px;
     margin: 0 auto;
   }
-  
+
   /* Style the club cards */
   .Clubs {
     width: 220px;
@@ -34,7 +34,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Style the club images */
   .Club_images {
     width: 100%;
@@ -42,13 +42,13 @@
     object-fit: cover;
     border-radius: 5px;
   }
-  
+
   /* Style the club names */
   .club_names {
     margin-top: 10px;
     font-weight: bold;
   }
-  
+
   /* Style the buttons */
   .Clubs button {
     margin-top: 10px;
@@ -59,39 +59,39 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   .Clubs button:hover {
     background-color: #555;
   }
-  
 
-  
-  
+
+
+
   /* END OF CLUB PAGE */
   /* END OF CLUB PAGE */
   /* END OF CLUB PAGE */
-  
-  
-  
-  
+
+
+
+
   /* ----------------------------------------------------------------------------------------------------------------- */
   /* JOIN PAGE */
   /* JOIN PAGE */
   /* JOIN CLUB PAGE */
-  
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   /* Set a background color and font for the whole page */
   body {
     background-color: #f2f2f2;
     font-family: 'Raleway', sans-serif;
     line-height: 1.5;
   }
-  
+
   /* Center the main header and give it a background color */
   .Website_main_header {
     text-align: center;
@@ -99,7 +99,7 @@
     background-color: #333;
     color: #fff;
   }
-  
+
   /* Style the main container for the form */
   .main_div_join {
     max-width: 600px;
@@ -109,17 +109,17 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Style the inner form divs */
   .inner_join_form {
     margin-bottom: 20px;
   }
-  
+
   /* Style form labels */
   label {
     font-weight: bold;
   }
-  
+
   /* Style form input fields */
   input[type="text"] {
     width: 100%;
@@ -127,12 +127,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
+
   /* Style the checkbox options */
   input[type="checkbox"] {
     margin-right: 5px;
   }
-  
+
   /* Style the submit button */
   input[type="submit"] {
     display: block;
@@ -144,20 +144,20 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   input[type="submit"]:hover {
     background-color: #555;
   }
-  
+
   /* END OF JOIN PAGE */
   /* END OF JOIN PAGE */
-  /* END OF JOIN PAGE */  
-   
+  /* END OF JOIN PAGE */
 
 
 
 
-   
+
+
    /* CSS for fixed navigation bar */
     body {
         margin: 25px;
@@ -166,7 +166,7 @@
         font-family: Arial, sans-serif;
         background-color: #D6F0EF;
       }
-  
+
       .navbar {
         position: fixed;
         top: 100px;
@@ -180,7 +180,7 @@
         margin-top: 20px;
         z-index: 2; /* Set a higher z-index value */
       }
-  
+
       .navbar a {
         color: #333;
         text-decoration: none;
@@ -189,7 +189,7 @@
         background-color: lightgrey;
         justify-content: space-evenly;
       }
-  
+
       .heading {
         padding: 20px;
         text-align: center;
@@ -206,7 +206,7 @@
         width: 97%;
         z-index: 2; /* Set a higher z-index value */
     }
-  
+
     .recent-events {
     margin-top: 200px;
     padding: 30px;
@@ -223,7 +223,7 @@
     margin-left: auto; /* Add this line to center the div horizontally */
     margin-right: auto; /* Add this line to center the div horizontally */
   }
-  
+
       .recent-events h2 {
         margin-bottom: 200px;
         margin-top: 100px;
@@ -231,7 +231,7 @@
         margin: -10px;
         height: 50px;
       }
-  
+
       .icon-button {
         position: relative;
         display: flex;
@@ -245,15 +245,15 @@
         outline: none;
         border-radius: 50%;
       }
-  
+
       .icon-button:hover {
         cursor: pointer;
       }
-  
+
       .icon-button:active {
         background: #cccccc;
       }
-  
+
       .icon-button__badge {
         position: absolute;
         top: -10px;
@@ -267,17 +267,17 @@
         align-items: center;
         border-radius: 50%;
       }
-  
+
       .event {
         display: none;
         position: fixed;
       }
-  
+
       .event.active {
         display: block;
         position: fixed;
       }
-  
+
       .upcoming-events {
         text-align: center;
         margin-top: 30px;
@@ -285,7 +285,7 @@
         margin-top: 10px;
         z-index: 1; /* Set a lower z-index value */
       }
-  
+
       .nav-buttons {
         display: flex;
         justify-content: space-between;
@@ -294,7 +294,7 @@
         left: 10px;
         right: 10px;
       }
-  
+
       .nav-buttons button {
         padding: 10px;
         background-color: #333;
@@ -303,13 +303,13 @@
         outline: none;
         cursor: pointer;
       }
-  
+
       .more-events-button {
         display: flex;
         justify-content: center;
         margin-top: 20px;
       }
-  
+
       .more-events-button button {
         padding: 10px 20px;
         background-color: #333;
@@ -318,7 +318,7 @@
         outline: none;
         cursor: pointer;
       }
-  
+
       .footer {
         color: #333;
       }

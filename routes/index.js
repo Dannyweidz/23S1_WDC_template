@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,7 +10,7 @@ router.get('/', function(req, res, next) {
 let users = {
   duckman: {password: 'goob383'},
   duckduck: {password: 'shoob'}
-}
+};
 
 router.post("/login", function(req, res, next) {
 
@@ -20,6 +21,10 @@ router.post("/login", function(req, res, next) {
   } else {
     res.sendStatus(401);
   }
+});
+
+router.get("/register", function(req, res, next) {
+  res.sendFile(path.join(__dirname, '../public/register.html'));
 });
 
 module.exports = router;

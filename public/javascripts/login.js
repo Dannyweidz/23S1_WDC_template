@@ -1,3 +1,5 @@
+let logincounter = 0;
+
 function login(){
 
     let login_info = {
@@ -14,7 +16,7 @@ function login(){
     XHTTP.onload = function() {
         if (XHTTP.status === 200){
             window.location.href = '/homepage';
-        } else if (XHTTP.status === 401){
+        } else if (XHTTP.status === 401 && logincounter === 0){
             var passfield = document.getElementById('password');
             var division = document.createElement('DIV');
             division.setAttribute('class', 'incorrect-pass');
@@ -23,6 +25,7 @@ function login(){
             var docbreak = document.createElement('br');
             passfield.insertAdjacentElement('afterend', division);
             division.insertAdjacentElement('afterend', docbreak);
+            logincounter++;
         } else {
 
         }

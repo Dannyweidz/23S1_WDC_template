@@ -37,20 +37,19 @@ router.post("/registered", function(req, res, next){
   }
 });
 
-
-let Authenticator = function(req, res, next){
+router.use('/', function(req, res, next){
   if (req.session && req.session.username){
     next();
   } else {
     res.redirect('/');
   }
-}
+});
+
+//EVERYTHING BELOW THIS IS SECURE
 
 router.post('/logout', function(req, res, next) {
-  if (req.session && req.session.username){
       delete req.session.username;
       res.end();
-    }
 });
 
 

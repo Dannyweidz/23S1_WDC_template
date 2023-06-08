@@ -21,11 +21,6 @@ app.use(session({
     secure: false
 }));
 
-app.use(function(req, res, next){
-    console.log("The Current User Is: " + req.session.username);
-    next();
-});
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

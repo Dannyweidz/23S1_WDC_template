@@ -16,7 +16,6 @@ router.post("/login", function(req, res, next) {
   if (req.body.username in users && req.body.password === users[req.body.username].password){
 
     req.session.username = req.body.username;
-      console.log(req.body.username);
       res.sendStatus(200);
   } else {
     res.sendStatus(401);

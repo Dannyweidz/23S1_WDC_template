@@ -14,9 +14,17 @@ function login(){
     XHTTP.onload = function() {
         if (XHTTP.status === 200){
             window.location.href = '/homepage.html';
+        } else if (XHTTP.status === 401){
+            var passfield = document.getElementById('password');
+            var division = document.createElement('DIV');
+            division.setAttribute('class', 'incorrect-pass');
+            division.textContent = "INCORRECT USERNAME OR PASSWORD";
+            division.style.color = 'red';
+            var docbreak = document.createElement('br');
+            passfield.insertAdjacentElement('afterend', division);
+            division.insertAdjacentElement('afterend', docbreak);
         } else {
-            console.log("authentication failed");
-            //SHOW FAILED LOGIN MESSAGE
+
         }
     }
 

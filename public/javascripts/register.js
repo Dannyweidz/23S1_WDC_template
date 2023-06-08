@@ -55,3 +55,44 @@
 
         return 'Moderate';
       }
+
+let counter = 0;
+
+function register() {
+
+    let registration_info = {
+        username:document.getElementById('username').value,
+        email:document.getElementById('email').value,
+        password:document.getElementById('password').value
+    };
+
+    if (document.getElementById('confirm-password').value !== document.getElementById('password').value && counter === 0){
+        console.log(document.getElementById('confirm-password').value);
+        console.log(registration_info[password]);
+        let pass = document.getElementById('confirm-password');
+        let mess = document.createElement('DIV')
+        mess.setAttribute('class', 'non-matching-pass');
+        mess.textContent = "PASSWORDS DO NOT MATCH";
+        mess.style.color = 'red';
+        var docbreak = document.createElement('br');
+        pass.insertAdjacentElement('afterend', docbreak);
+        pass.insertAdjacentElement('afterend', mess);
+        pass.insertAdjacentElement('afterend', docbreak);
+        counter++;
+        return;
+    } else if (document.getElementById('confirm-password').value !== document.getElementById('password').value){
+        return;
+    }
+
+    let XHTTP = new XMLHttpRequest();
+
+    XHTTP.onreadystatechange = function() {
+        if (XHTTP.readyState === 4 && XHTTP.status === 200){
+            window.location.href = '/homepage';
+        }
+    };
+
+    XHTTP.open('POST', '/registered', true);
+    XHTTP.setRequestHeader('Content-Type', 'application/json');
+    XHTTP.send(JSON.stringify(registration_info));
+}

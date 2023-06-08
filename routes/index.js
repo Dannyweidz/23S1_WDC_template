@@ -17,7 +17,7 @@ router.post("/login", function(req, res, next) {
   if (req.body.username in users && req.body.password === users[req.body.username].password){
 
     req.session.username = req.body.username;
-      res.sendStatus(200);
+    res.sendStatus(200);
   } else {
     res.sendStatus(401);
   }
@@ -25,6 +25,16 @@ router.post("/login", function(req, res, next) {
 
 router.get("/register", function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/register.html'));
+});
+
+router.post("/registered", function(req, res, next){
+  if (req.body.username in users) {
+    res.sendStatus(401);
+  } else {
+    req.session.username = req.body.username;
+    users[req.body.username] = { password: req.body.password };
+    res.sendStatus(200);
+  }
 });
 
 

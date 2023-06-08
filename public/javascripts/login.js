@@ -14,7 +14,7 @@ function login(){
     XHTTP.send(JSON.stringify(login_info));
 
     XHTTP.onload = function() {
-        if (XHTTP.status === 200){
+        if (XHTTP.status === 200 && XHTTP.readyState === 4){
             window.location.href = '/homepage';
         } else if (XHTTP.status === 401 && logincounter === 0){
             var passfield = document.getElementById('password');

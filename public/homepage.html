@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClubConnect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-cC6Kqp2f9mP3C93bKZuNt2cOHpe6KtKBRQYIICAd1nw93DhziwXN7xk5FsYXM8ePfLOQ3syufOdT3R0cdv+r1w==" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="homepage.css">
+  <script src="website.js"></script>
+  <script src="user.js"></script>
+</head>
+
+<body>
+
+  <div class="heading">
+    <button type="button" class="icon-button">
+      <span class="material-icons">notifications</span>
+      <span class="icon-button__badge">2</span>
+    </button>
+    <h1>C l u b C o n n e c t</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="events.html">Events</a>
+    <a href="discussion.html">Disscussions</a>
+  </div>
+
+  <div class="recent-events">
+    <h2>Recent Events</h2>
+    <div class="event active">
+      <p>Event 1</p>
+    </div>
+    <div class="event">
+      <p>Event 2</p>
+    </div>
+    <div class="event">
+        <p>Event 3</p>
+      </div>
+    <!-- Add more recent events HERE  -->
+
+    <div class="nav-buttons">
+      <button type="button" id="previousEventBtn">Previous</button>
+      <button type="button" id="nextEventBtn">Next</button>
+    </div>
+  </div>
+
+  <div class="upcoming-events">
+    Be The First To Check out What's Happening 
+    <h1>Upcoming Events</h1>
+    <div class="more-events-button">
+      <button type="button" id="moreEventsBtn">View All Events</button>
+    </div>
+  </div>
+
+  <div class = "footer"> </div>
+
+  <script>
+    const events = document.querySelectorAll('.event');
+    const previousEventBtn = document.getElementById('previousEventBtn');
+    const nextEventBtn = document.getElementById('nextEventBtn');
+    let currentEventIndex = 0;
+
+    previousEventBtn.addEventListener('click', () => {
+      events[currentEventIndex].classList.remove('active');
+      currentEventIndex = (currentEventIndex - 1 + events.length) % events.length;
+      events[currentEventIndex].classList.add('active');
+    });
+
+    nextEventBtn.addEventListener('click', () => {
+      events[currentEventIndex].classList.remove('active');
+      currentEventIndex = (currentEventIndex + 1) % events.length;
+      events[currentEventIndex].classList.add('active');
+    });
+
+    const moreEventsBtn = document.getElementById('moreEventsBtn');
+    moreEventsBtn.addEventListener('click', () => {
+      // Code to handle clicking the "More Events" button
+      console.log('More events button clicked');
+    });
+  </script>
+</body>
+
+</html>

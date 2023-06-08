@@ -13,7 +13,7 @@ function login(){
 
     XHTTP.onload = function() {
         if (XHTTP.status === 200){
-            window.location.href = '/account.html';
+            window.location.href = '/homepage.html';
         } else {
             console.log("authentication failed");
             //SHOW FAILED LOGIN MESSAGE

@@ -9,17 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="homepage.css">
-  <script src="website.js"></script>
-  <script src="user.js"></script>
+  <link rel="stylesheet" href="/stylesheets/homepage.css">
 </head>
 
 <body class="home">
 
   <div class="heading">
     <button type="button" class="icon-button">
-      <span class="material-icons">notifications</span>
-      <span class="icon-button__badge">2</span>
+      <span class="material-icons" onclick="logout()">account_circle</span>
     </button>
     <h1>C l u b C o n n e c t</h1>
   </div>
@@ -60,30 +57,7 @@
 
   <div class = "footer"> </div>
 
-  <script>
-    const events = document.querySelectorAll('.event');
-    const previousEventBtn = document.getElementById('previousEventBtn');
-    const nextEventBtn = document.getElementById('nextEventBtn');
-    let currentEventIndex = 0;
-
-    previousEventBtn.addEventListener('click', () => {
-      events[currentEventIndex].classList.remove('active');
-      currentEventIndex = (currentEventIndex - 1 + events.length) % events.length;
-      events[currentEventIndex].classList.add('active');
-    });
-
-    nextEventBtn.addEventListener('click', () => {
-      events[currentEventIndex].classList.remove('active');
-      currentEventIndex = (currentEventIndex + 1) % events.length;
-      events[currentEventIndex].classList.add('active');
-    });
-
-    const moreEventsBtn = document.getElementById('moreEventsBtn');
-    moreEventsBtn.addEventListener('click', () => {
-      // Code to handle clicking the "More Events" button
-      console.log('More events button clicked');
-    });
-  </script>
+  <script src="/javascripts/homepage.js"></script>
 </body>
 
 </html>

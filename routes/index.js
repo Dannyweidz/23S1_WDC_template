@@ -38,7 +38,20 @@ router.post("/registered", function(req, res, next){
 });
 
 
-/* INSERT SESSION CHECKING MIDDLEWARE*/
+let Authenticator = function(req, res, next){
+  if (req.session && req.session.username){
+    next();
+  } else {
+    res.redirect('/');
+  }
+}
+
+router.post('/logout', function(req, res, next) {
+  if (req.session && req.session.username){
+      delete req.session.username;
+      res.end();
+    }
+});
 
 
 router.get("/homepage", function(req, res, next) {

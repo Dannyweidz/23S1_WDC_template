@@ -1,3 +1,4 @@
+/*STYLES FOR GROUP.HTML AND ACCOUNT.HTML*/
 
 body {
   padding: 50px;
@@ -271,3 +272,111 @@ input.profile:read-only {
   object-fit:cover;
   width:100%;
 }
+
+/*/////////////////////////////////////////////////////*/
+
+/*STYLES FOR LOGIN.HTML*/
+
+.login {
+  background-color: #D6F0EF;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  background-color: #fff;
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex; /**/
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-family: "Bruno Ace";
+  color: #333;
+  width: 300px;
+  margin: 50px auto;
+}
+
+.login h2 {
+  text-align: center;
+  color: #333;
+}
+
+.login form {
+  margin-top: 20px;
+}
+
+
+.login label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.login button[type="button"] {
+  width: 100%;
+  padding: 10px;
+  background-color:#298cba;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login button[type="login"]:hover {
+  background-color: #298cba;
+}
+
+.register-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.register-link p {
+  margin-bottom: 10;
+}
+
+.register-link a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.email.btn {
+  display: inline-block;
+  text-align: center;
+  background-color: white;
+  color: #D44638;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 280px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.02px solid black;
+}
+
+.col {
+display: flex;
+justify-content: center;
+}
+
+/*//////////////////////////////////////*/
+

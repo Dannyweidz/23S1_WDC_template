@@ -6,13 +6,21 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("/login", function(req, res, next) {
-  res.send();
-});
+let users = {
+  duckman: {password: 'goob383'},
+  duckduck: {password: 'shoob'}
+}
 
-router.get("/login.html", function(req, res, next){
-  res.sendStatus(403);
-  res.redirect("/");
+router.post("/login", function(req, res, next) {
+
+  if (req.body.username in users && req.body.password === users[req.body.username].password){
+
+    req.session.username = req.body.username;
+      console.log(req.body.username);
+      res.sendStatus(200);
+  } else {
+    res.sendStatus(401);
+  }
 });
 
 module.exports = router;

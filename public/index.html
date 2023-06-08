@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>ClubsAdelaide</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Club Login</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-cC6Kqp2f9mP3C93bKZuNt2cOHpe6KtKBRQYIICAd1nw93DhziwXN7xk5FsYXM8ePfLOQ3syufOdT3R0cdv+r1w==" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Main Page With Holistic Info</h1>
-    <p>This page is publically accessible</p>
-    <a href = "/login">
-        <button type="button" onclick = "">Login</button>
-    </a>
+<body class="login">
+  <div class = "title">
+    <h1> ClubConnect </h1>
+  </div>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="button" onclick="login()">Login</button>
+    </form>
+    <div class="register-link">
+      <p>Don't have an account? <a href="#">Register</a>
+        <br>or</p>
+    </div>
+
+    <div class="col">
+      <div id="g_id_onload"
+        data-client_id="79497311944-21t54bos8cnb2cf09gp5f9qlbv90sgcv.apps.googleusercontent.com"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-callback="login_with_google"
+        data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin"
+            data-type="standard"
+            data-shape="pill"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/javascripts/login.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </body>
+
 </html>

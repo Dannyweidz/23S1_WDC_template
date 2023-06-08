@@ -251,10 +251,23 @@ input.profile:read-only {
 
 .club-member {
   display:flex;
+  align-items:center;
 }
 
 .club-member h5 {
   margin-left:20px;
   margin-bottom:10px;
-  width:50%;
+  width:49%;
+}
+
+.small-profile-pic-div {
+  margin-left:20px;
+  margin-top:10px;
+  width:2%;
+  flex-shrink:0;
+}
+
+.small-profile-pic {
+  object-fit:cover;
+  width:100%;
 }

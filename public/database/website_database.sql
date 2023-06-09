@@ -18,3 +18,6 @@ CREATE TABLE User (
     email VARCHAR(120),
     PRIMARY KEY (username)
 );
+
+INSERT INTO User
+VALUES ('duckduck', 'george', 'duck', 'Ducks123', 'duck@duckmail.com');

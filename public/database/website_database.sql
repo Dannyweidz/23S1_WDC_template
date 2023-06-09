@@ -20,4 +20,4 @@ CREATE TABLE User (
 );
 
 INSERT INTO User
-VALUES ('duckduck', 'george', 'duck', 'Ducks123', 'duck@duckmail.com');
+VALUES ('duckduck', 'george', 'duck', 'Ducks123', 'yassman0603@gmail.com');

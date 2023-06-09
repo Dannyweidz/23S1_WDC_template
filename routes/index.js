@@ -16,35 +16,6 @@ let users = {
   duckman: {password: 'goob383'},
   duckduck: {password: 'shoob'}
 };
-/*
-router.post("/login", async function(req, res, next) {
-
-  if ('client_id' in req.body){
-
-      const ticket = await client.verifyIdToken({
-        idToken: req.body.credential,
-        audience: CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
-        // Or, if multiple clients access the backend:
-        //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
-      });
-      const payload = ticket.getPayload();
-      req.session.username = payload['email'];
-      // If request specified a G Suite domain:
-      // const domain = payload['hd'];
-      res.sendStatus(200);
-  } else {
-
-    if (req.body.username in users && req.body.password === users[req.body.username].password){
-
-      req.session.username = req.body.username;
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
-    }
-  }
-});
-
-*/
 
 router.post("/login", async function(req, res, next) {
 
@@ -52,15 +23,38 @@ router.post("/login", async function(req, res, next) {
 
       const ticket = await client.verifyIdToken({
         idToken: req.body.credential,
-        audience: CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
-        // Or, if multiple clients access the backend:
-        //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+        audience: CLIENT_ID,
       });
       const payload = ticket.getPayload();
-      req.session.username = payload['email'];
-      // If request specified a G Suite domain:
-      // const domain = payload['hd'];
-      res.sendStatus(200);
+
+      let query = "SELECT username FROM User WHERE email = ?";
+
+      req.pool.getConnection(function(err1, connection){
+
+        if (err1){
+          console.log("error");
+          res.sendStatus(500);
+          return;
+        }
+        connection.query(query, [payload['email']], function(err2, results, fields){
+
+        connection.release();
+
+        if (err2){
+          res.sendStatus(500);
+          return;
+        }
+        if(results.length > 0){
+          req.session.username = results[0].username;
+          res.sendStatus(200);
+        } else {
+          res.sendStatus(401);
+        }
+
+      })
+
+    })
+
   } else {
 
     if ('username' in req.body && 'password' in req.body){
@@ -95,8 +89,6 @@ router.post("/login", async function(req, res, next) {
     }
   }
 });
-
-/////////////////////
 
 router.get("/register", function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/register.html'));

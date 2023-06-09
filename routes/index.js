@@ -99,7 +99,6 @@ router.post("/registered", function(req, res, next){
 
   req.pool.getConnection(function(err1, connection){
     if (err1){
-      console.log("error 1");
       res.sendStatus(500);
       return;
     }
@@ -108,7 +107,6 @@ router.post("/registered", function(req, res, next){
       connection.release();
 
       if (err2){
-        console.log("error 2", err2);
         res.sendStatus(500);
         return;
       }
@@ -141,5 +139,14 @@ router.post('/logout', function(req, res, next) {
 router.get("/homepage", function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/homepage.html'));
 });
+
+router.get("/profile", function(req, res, next){
+
+  let username = req.session.username;
+
+  res.sendFile(path.join(__dirname, '../public/account.html'));
+
+});
+
 
 module.exports = router;

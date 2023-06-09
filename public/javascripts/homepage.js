@@ -33,3 +33,16 @@ function logout() {
   XHTTP.open('POST', '/logout', true);
   XHTTP.send();
 }
+
+function profile() {
+  let XHTTP = new XMLHttpRequest();
+
+  XHTTP.onreadystatechange = function(){
+    if (XHTTP.readyState === 4 && XHTTP.status === 200){
+      window.location.href = '/profile';
+    }
+  }
+
+  XHTTP.open('GET', '/profile', true);
+  XHTTP.send();
+}

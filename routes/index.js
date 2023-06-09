@@ -64,7 +64,6 @@ router.post("/login", async function(req, res, next) {
       req.pool.getConnection(function(err1, connection){
 
         if (err1){
-          console.log("error");
           res.sendStatus(500);
           return;
         }
@@ -95,13 +94,32 @@ router.get("/register", function(req, res, next) {
 });
 
 router.post("/registered", function(req, res, next){
-  if (req.body.username in users) {
-    res.sendStatus(401);
-  } else {
-    req.session.username = req.body.username;
-    users[req.body.username] = { password: req.body.password };
-    res.sendStatus(200);
-  }
+
+  let query = "INSERT INTO User(username, first_name, last_name, email, pass) VALUES(?, 'default', 'default', ?,?)";
+
+  req.pool.getConnection(function(err1, connection){
+    if (err1){
+      console.log("error 1");
+      res.sendStatus(500);
+      return;
+    }
+
+    connection.query(query, [req.body.username, req.body.email, req.body.password], function(err2, results, fields){
+      connection.release();
+
+      if (err2){
+        console.log("error 2", err2);
+        res.sendStatus(500);
+        return;
+      }
+
+      req.session.username = req.body.username;
+      res.sendStatus(200);
+
+
+    });
+  })
+
 });
 
 router.use('/', function(req, res, next){

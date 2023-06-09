@@ -11,11 +11,11 @@ CREATE TABLE Logging_in (
 );
 
 CREATE TABLE User (
-    username VARCHAR(40),
+    username VARCHAR(40) UNIQUE,
     first_name VARCHAR(40),
     last_name VARCHAR(40),
     pass VARCHAR(120),
-    email VARCHAR(120),
+    email VARCHAR(120) UNIQUE,
     PRIMARY KEY (username)
 );
 
